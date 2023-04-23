@@ -8,6 +8,12 @@
 #include <QColor>
 #include "ui_xrandr_gui.h"
 
+class DisplayObject : public QGraphicsRectItem
+{
+	public:
+		explicit DisplayObject(QGraphicsRectItem *parent = 0);
+};
+
 class MainWindow : public QMainWindow
 {
 	Q_OBJECT
@@ -16,10 +22,12 @@ class MainWindow : public QMainWindow
 		explicit MainWindow(QMainWindow *parent = 0);
 
 	private:
-		Ui_xrandrGUI *xrandrGUI= new Ui_xrandrGUI();
+		Ui_xrandrGUI *xrandrGUI = new Ui_xrandrGUI();
+		QGraphicsScene *scene	= new QGraphicsScene();
+		std::vector<std::string> displays; 
 
 	public slots:
-		std::string detectDisplays(void);
+		void detectDisplays(void);
 };
 
 #endif // MAINWINDOW_H
