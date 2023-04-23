@@ -17,6 +17,9 @@ class MainWindow : public QMainWindow
 
 	private:
 		Ui_xrandrGUI *xrandrGUI= new Ui_xrandrGUI();
+
+	public slots:
+		std::string detectDisplays(void);
 };
 
 #endif // MAINWINDOW_H
