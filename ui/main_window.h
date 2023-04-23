@@ -12,6 +12,11 @@ class DisplayObject : public QGraphicsRectItem
 {
 	public:
 		explicit DisplayObject(QGraphicsRectItem *parent = 0);
+
+	private:
+		void mousePressEvent(QGraphicsSceneMouseEvent *event);
+		void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+		void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 };
 
 class MainWindow : public QMainWindow

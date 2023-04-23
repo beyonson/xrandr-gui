@@ -12,9 +12,32 @@ std::stringstream exec(const char* cmd);
 // display object constructor
 DisplayObject::DisplayObject(QGraphicsRectItem *parent) : QGraphicsRectItem(parent)
 {
-	this->setRect(10,10,10,10);
+	this->setRect(10,10,192,108);
 	this->setPos(0,0);
 	this->setBrush(Qt::blue);
+	this->setAcceptHoverEvents(true);
+}
+
+void DisplayObject::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+	return;	
+}
+
+void DisplayObject::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+	QPointF origCursorPosition = event->lastScenePos();
+	QPointF updatedCursorPosition = event->scenePos();
+
+	QPointF origPosition = this->scenePos();
+	QPointF updatedCursorX = updatedCursorPosition - origCursorPosition + origPosition;
+	//QPointF updatedCursorY = updatedCursorPosition.y() - origCursorPosition.y() + origPosition.y();
+
+	this->setPos(updatedCursorX);
+}
+
+void DisplayObject::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+	return;	
 }
 
 // constructor
@@ -24,11 +47,11 @@ MainWindow::MainWindow(QMainWindow *parent) : QMainWindow(parent)
 	this->xrandrGUI->setupUi(this);
 
 	// add scene
-	this->scene->setSceneRect(0,0,1200,1000);
+	this->scene->setSceneRect(0,0,700,400);
 	this->xrandrGUI->graphicsView->setScene(this->scene);
 
 	// connect signals
-	QObject::connect(this->xrandrGUI->pushButton_4, SIGNAL(clicked()), this, SLOT(detectDisplays()));
+	QObject::connect(this->xrandrGUI->pushButton_4, SIGNAL(clicked()), SLOT(detectDisplays()));
 }
 
 // used to see if there are new displays plugged in
