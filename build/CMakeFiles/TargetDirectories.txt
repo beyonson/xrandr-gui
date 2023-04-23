@@ -1,0 +1,4 @@
+/home/garrett/git/xrandrgui/build/CMakeFiles/xrandrGUI.dir
+/home/garrett/git/xrandrgui/build/CMakeFiles/edit_cache.dir
+/home/garrett/git/xrandrgui/build/CMakeFiles/rebuild_cache.dir
+/home/garrett/git/xrandrgui/build/CMakeFiles/xrandrGUI_autogen.dir
