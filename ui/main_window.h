@@ -14,6 +14,7 @@ class DisplayObject : public QGraphicsRectItem
 		explicit DisplayObject(QGraphicsRectItem *parent = 0);
 
 	private:
+		void setPosition(int x, int y);
 		void mousePressEvent(QGraphicsSceneMouseEvent *event);
 		void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 		void mouseMoveEvent(QGraphicsSceneMouseEvent *event);

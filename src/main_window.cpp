@@ -7,15 +7,25 @@
 
 #include "main_window.h"
 
+#define SCENEWIDTH 800
+#define SCENEHEIGHT 495
+#define DISPLAYWIDTH 192
+#define DISPLAYHEIGHT 108
+
 std::stringstream exec(const char* cmd);
 
 // display object constructor
 DisplayObject::DisplayObject(QGraphicsRectItem *parent) : QGraphicsRectItem(parent)
 {
-	this->setRect(10,10,192,108);
+	this->setRect(0,0,DISPLAYWIDTH,DISPLAYHEIGHT);
 	this->setPos(0,0);
 	this->setBrush(Qt::blue);
 	this->setAcceptHoverEvents(true);
+}
+
+void DisplayObject::setPosition(int x, int y)
+{
+	this->setPos(x, y);
 }
 
 void DisplayObject::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -30,7 +40,6 @@ void DisplayObject::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 	QPointF origPosition = this->scenePos();
 	QPointF updatedCursorX = updatedCursorPosition - origCursorPosition + origPosition;
-	//QPointF updatedCursorY = updatedCursorPosition.y() - origCursorPosition.y() + origPosition.y();
 
 	this->setPos(updatedCursorX);
 }
@@ -47,11 +56,11 @@ MainWindow::MainWindow(QMainWindow *parent) : QMainWindow(parent)
 	this->xrandrGUI->setupUi(this);
 
 	// add scene
-	this->scene->setSceneRect(0,0,700,400);
+	this->scene->setSceneRect(0,0,SCENEWIDTH,SCENEHEIGHT);
 	this->xrandrGUI->graphicsView->setScene(this->scene);
 
 	// connect signals
-	QObject::connect(this->xrandrGUI->pushButton_4, SIGNAL(clicked()), SLOT(detectDisplays()));
+	QObject::connect(this->xrandrGUI->detectButton, SIGNAL(clicked()), SLOT(detectDisplays()));
 }
 
 // used to see if there are new displays plugged in
@@ -60,12 +69,18 @@ void MainWindow::detectDisplays(void)
 	std::string newLine;
 	std::stringstream result; 
 	result = exec("xrandr | grep \" connected \" | awk '{ print$1 }'");
+
+	// clear scene
 	displays.clear();
+	this->scene->clear();
 	while(getline(result, newLine))
 	{
 		displays.push_back(newLine);
 	}
+
+	// get number of displays and place accordingly
 	DisplayObject *newObject = new DisplayObject();
+	newObject->setPos(SCENEWIDTH/2 - DISPLAYWIDTH/2, SCENEHEIGHT/2 - DISPLAYHEIGHT/2);
 	this->scene->addItem(newObject);
 }
 

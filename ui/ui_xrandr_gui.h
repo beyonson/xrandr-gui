@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'xrandr_guixoDnlG.ui'
+** Form generated from reading UI file 'xrandr_guiBwSdlQ.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.15.9
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef XRANDR_GUIXODNLG_H
-#define XRANDR_GUIXODNLG_H
+#ifndef XRANDR_GUIBWSDLQ_H
+#define XRANDR_GUIBWSDLQ_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -37,18 +37,18 @@ public:
     QVBoxLayout *verticalLayout_6;
     QFrame *buttonFrame;
     QHBoxLayout *horizontalLayout_3;
-    QFrame *frame;
+    QFrame *mirrorButtonFrame;
     QVBoxLayout *verticalLayout_2;
-    QPushButton *pushButton;
-    QFrame *frame_2;
+    QPushButton *mirrorButton;
+    QFrame *extendButtonFrame;
     QVBoxLayout *verticalLayout_3;
-    QPushButton *pushButton_2;
-    QFrame *frame_3;
+    QPushButton *extendButton;
+    QFrame *setposButtonFrame;
     QVBoxLayout *verticalLayout_4;
-    QPushButton *pushButton_3;
-    QFrame *frame_4;
+    QPushButton *setposButton;
+    QFrame *detectButtonFrame;
     QVBoxLayout *verticalLayout_5;
-    QPushButton *pushButton_4;
+    QPushButton *detectButton;
     QFrame *labelFrame;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
@@ -59,6 +59,8 @@ public:
         if (xrandrGUI->objectName().isEmpty())
             xrandrGUI->setObjectName(QString::fromUtf8("xrandrGUI"));
         xrandrGUI->resize(800, 600);
+        xrandrGUI->setMinimumSize(QSize(800, 600));
+        xrandrGUI->setMaximumSize(QSize(800, 600));
         centralwidget = new QWidget(xrandrGUI);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setMinimumSize(QSize(800, 0));
@@ -74,7 +76,7 @@ public:
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         displayFrame = new QFrame(displayWidget);
         displayFrame->setObjectName(QString::fromUtf8("displayFrame"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(displayFrame->sizePolicy().hasHeightForWidth());
@@ -87,6 +89,7 @@ public:
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
         graphicsView = new QGraphicsView(displayFrame);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+        graphicsView->setFrameShape(QFrame::NoFrame);
 
         horizontalLayout_4->addWidget(graphicsView);
 
@@ -106,61 +109,61 @@ public:
         buttonFrame->setFrameShadow(QFrame::Raised);
         horizontalLayout_3 = new QHBoxLayout(buttonFrame);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        frame = new QFrame(buttonFrame);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setFrameShape(QFrame::NoFrame);
-        frame->setFrameShadow(QFrame::Raised);
-        verticalLayout_2 = new QVBoxLayout(frame);
+        mirrorButtonFrame = new QFrame(buttonFrame);
+        mirrorButtonFrame->setObjectName(QString::fromUtf8("mirrorButtonFrame"));
+        mirrorButtonFrame->setFrameShape(QFrame::NoFrame);
+        mirrorButtonFrame->setFrameShadow(QFrame::Raised);
+        verticalLayout_2 = new QVBoxLayout(mirrorButtonFrame);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        pushButton = new QPushButton(frame);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        mirrorButton = new QPushButton(mirrorButtonFrame);
+        mirrorButton->setObjectName(QString::fromUtf8("mirrorButton"));
 
-        verticalLayout_2->addWidget(pushButton);
+        verticalLayout_2->addWidget(mirrorButton);
 
 
-        horizontalLayout_3->addWidget(frame);
+        horizontalLayout_3->addWidget(mirrorButtonFrame);
 
-        frame_2 = new QFrame(buttonFrame);
-        frame_2->setObjectName(QString::fromUtf8("frame_2"));
-        frame_2->setFrameShape(QFrame::NoFrame);
-        frame_2->setFrameShadow(QFrame::Raised);
-        verticalLayout_3 = new QVBoxLayout(frame_2);
+        extendButtonFrame = new QFrame(buttonFrame);
+        extendButtonFrame->setObjectName(QString::fromUtf8("extendButtonFrame"));
+        extendButtonFrame->setFrameShape(QFrame::NoFrame);
+        extendButtonFrame->setFrameShadow(QFrame::Raised);
+        verticalLayout_3 = new QVBoxLayout(extendButtonFrame);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        pushButton_2 = new QPushButton(frame_2);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        extendButton = new QPushButton(extendButtonFrame);
+        extendButton->setObjectName(QString::fromUtf8("extendButton"));
 
-        verticalLayout_3->addWidget(pushButton_2);
+        verticalLayout_3->addWidget(extendButton);
 
 
-        horizontalLayout_3->addWidget(frame_2);
+        horizontalLayout_3->addWidget(extendButtonFrame);
 
-        frame_3 = new QFrame(buttonFrame);
-        frame_3->setObjectName(QString::fromUtf8("frame_3"));
-        frame_3->setFrameShape(QFrame::NoFrame);
-        frame_3->setFrameShadow(QFrame::Raised);
-        verticalLayout_4 = new QVBoxLayout(frame_3);
+        setposButtonFrame = new QFrame(buttonFrame);
+        setposButtonFrame->setObjectName(QString::fromUtf8("setposButtonFrame"));
+        setposButtonFrame->setFrameShape(QFrame::NoFrame);
+        setposButtonFrame->setFrameShadow(QFrame::Raised);
+        verticalLayout_4 = new QVBoxLayout(setposButtonFrame);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        pushButton_3 = new QPushButton(frame_3);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        setposButton = new QPushButton(setposButtonFrame);
+        setposButton->setObjectName(QString::fromUtf8("setposButton"));
 
-        verticalLayout_4->addWidget(pushButton_3);
+        verticalLayout_4->addWidget(setposButton);
 
 
-        horizontalLayout_3->addWidget(frame_3);
+        horizontalLayout_3->addWidget(setposButtonFrame);
 
-        frame_4 = new QFrame(buttonFrame);
-        frame_4->setObjectName(QString::fromUtf8("frame_4"));
-        frame_4->setFrameShape(QFrame::NoFrame);
-        frame_4->setFrameShadow(QFrame::Raised);
-        verticalLayout_5 = new QVBoxLayout(frame_4);
+        detectButtonFrame = new QFrame(buttonFrame);
+        detectButtonFrame->setObjectName(QString::fromUtf8("detectButtonFrame"));
+        detectButtonFrame->setFrameShape(QFrame::NoFrame);
+        detectButtonFrame->setFrameShadow(QFrame::Raised);
+        verticalLayout_5 = new QVBoxLayout(detectButtonFrame);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        pushButton_4 = new QPushButton(frame_4);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        detectButton = new QPushButton(detectButtonFrame);
+        detectButton->setObjectName(QString::fromUtf8("detectButton"));
 
-        verticalLayout_5->addWidget(pushButton_4);
+        verticalLayout_5->addWidget(detectButton);
 
 
-        horizontalLayout_3->addWidget(frame_4);
+        horizontalLayout_3->addWidget(detectButtonFrame);
 
 
         verticalLayout_6->addWidget(buttonFrame);
@@ -198,10 +201,10 @@ public:
     void retranslateUi(QMainWindow *xrandrGUI)
     {
         xrandrGUI->setWindowTitle(QCoreApplication::translate("xrandrGUI", "MainWindow", nullptr));
-        pushButton->setText(QCoreApplication::translate("xrandrGUI", "Mirror Displays", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("xrandrGUI", "Extend Displays", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("xrandrGUI", "Set Position", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("xrandrGUI", "Detect", nullptr));
+        mirrorButton->setText(QCoreApplication::translate("xrandrGUI", "Mirror Displays", nullptr));
+        extendButton->setText(QCoreApplication::translate("xrandrGUI", "Extend Displays", nullptr));
+        setposButton->setText(QCoreApplication::translate("xrandrGUI", "Set Position", nullptr));
+        detectButton->setText(QCoreApplication::translate("xrandrGUI", "Detect", nullptr));
         label->setText(QCoreApplication::translate("xrandrGUI", "xrandr GUI", nullptr));
     } // retranslateUi
 
@@ -213,4 +216,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // XRANDR_GUIXODNLG_H
+#endif // XRANDR_GUIBWSDLQ_H

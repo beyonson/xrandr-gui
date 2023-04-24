@@ -10,6 +10,18 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -57,7 +69,7 @@
        <item>
         <widget class="QFrame" name="displayFrame">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -85,7 +97,11 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QGraphicsView" name="graphicsView"/>
+           <widget class="QGraphicsView" name="graphicsView">
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -106,7 +122,7 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
-           <widget class="QFrame" name="frame">
+           <widget class="QFrame" name="mirrorButtonFrame">
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -115,7 +131,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="mirrorButton">
                <property name="text">
                 <string>Mirror Displays</string>
                </property>
@@ -125,7 +141,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_2">
+           <widget class="QFrame" name="extendButtonFrame">
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -134,7 +150,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
              <item>
-              <widget class="QPushButton" name="pushButton_2">
+              <widget class="QPushButton" name="extendButton">
                <property name="text">
                 <string>Extend Displays</string>
                </property>
@@ -144,7 +160,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_3">
+           <widget class="QFrame" name="setposButtonFrame">
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -153,7 +169,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_4">
              <item>
-              <widget class="QPushButton" name="pushButton_3">
+              <widget class="QPushButton" name="setposButton">
                <property name="text">
                 <string>Set Position</string>
                </property>
@@ -163,7 +179,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_4">
+           <widget class="QFrame" name="detectButtonFrame">
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -172,7 +188,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
-              <widget class="QPushButton" name="pushButton_4">
+              <widget class="QPushButton" name="detectButton">
                <property name="text">
                 <string>Detect</string>
                </property>
